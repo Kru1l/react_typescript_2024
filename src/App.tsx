@@ -1,8 +1,10 @@
+import CarContainer from "./components/CarsContainer/CarContainer";
+import './App.css';
 const App = () => {
 
     return (
-        <div>
-            App
+        <div className={"App"}>
+            <CarContainer/>
         </div>
     );
 };
