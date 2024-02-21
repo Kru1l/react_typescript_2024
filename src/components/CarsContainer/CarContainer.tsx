@@ -1,9 +1,10 @@
 import {useEffect, useState} from "react";
 
-import {ICar} from "../../interfaces/carInterface";
-import {carService} from "../../services/carService";
 import CarForm from "./CarForm";
 import Cars from "./Cars";
+import {carService} from "../../services";
+import {ICar} from "../../interfaces";
+
 
 const CarContainer = () => {
     const [cars, setCars] = useState<ICar[]>([]);

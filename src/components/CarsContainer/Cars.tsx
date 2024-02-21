@@ -1,8 +1,10 @@
 import {FC} from "react";
 
-import {ICar} from "../../interfaces/carInterface";
 import Car from "./Car/Car";
-import {ISetState} from "../../types/setStateType";
+import {ICar} from "../../interfaces";
+import {ISetState} from "../../types";
+
+
 
 interface IProps {
     cars: ICar[],

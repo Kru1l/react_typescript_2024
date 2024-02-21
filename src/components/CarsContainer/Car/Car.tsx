@@ -1,9 +1,9 @@
 import {FC} from "react";
 
-import {ICar} from "../../../interfaces/carInterface";
 import styles from './Car.module.css';
-import {ISetState} from "../../../types/setStateType";
-import {carService} from "../../../services/carService";
+import {ICar} from "../../../interfaces";
+import {carService} from "../../../services";
+import {ISetState} from "../../../types";
 
 interface IProps {
     car: ICar,

@@ -1,9 +1,11 @@
 import {SubmitHandler, useForm} from "react-hook-form";
 import {FC, useEffect} from "react";
 
-import {ICar} from "../../interfaces/carInterface";
-import {carService} from "../../services/carService";
-import {ISetState} from "../../types/setStateType";
+import {carService} from "../../services";
+import {ICar} from "../../interfaces";
+import {ISetState} from "../../types";
+
+
 
 interface IProps {
     // changeTrigger: () => void,

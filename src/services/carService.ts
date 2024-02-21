@@ -1,7 +1,7 @@
 import {apiService} from "./apiService";
-import {urls} from "../constans/urls";
-import {ICar} from "../interfaces/carInterface";
-import {IRes} from "../types/responseType";
+import {IRes} from "../types";
+import {ICar} from "../interfaces";
+import {urls} from "../constans";
 
 const carService = {
     getAll: (): IRes<ICar[]> => apiService.get(urls.cars.base),
