@@ -1,0 +1,35 @@
+.Header {
+    width: 100%;
+    height: 7vh;
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: center;
+    background: goldenrod;
+    border-bottom: solid 2px black;
+    position: fixed;
+    top: 0;
+}
+
+.linksBlock > a {
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+    font-weight: 600;
+    margin-right: 2vw;
+    transition: 1s
+}
+
+.linksBlock > a:hover {
+    color: silver;
+    transition: 1s;
+}
+
+.linksBlock > a[class='active'] {
+    color: saddlebrown;
+}
+
+#title {
+    color: white;
+    font-size: 50px;
+}
