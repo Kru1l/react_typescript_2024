@@ -1,0 +1,36 @@
+.Header {
+    width: 93vw;
+    height: 7vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+
+    background: rgba(24, 23, 25, 0.5);
+    backdrop-filter: blur(4px);
+    position: fixed;
+    z-index: 5;
+    top: 0;
+
+    border-radius: 8px;
+    margin-top: 9px;
+    transition: 1s;
+}
+
+.Header > a {
+    text-decoration: none;
+    margin: 2vw;
+    font-size: 25px;
+    font-weight: 700;
+    color: #9b9b9b;
+    transition: 0.5s;
+}
+
+.Header > a:hover {
+    color: white;
+    transition: 0.5s;
+}
+
+.Header > a[class='active'] {
+    color: #DB9F3DFF;
+}

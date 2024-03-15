@@ -1,0 +1,51 @@
+.Register, .Login {
+    width: 95vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.authForm {
+    width: 40%;
+    height: 55%;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: #9ba9a9;
+    border-radius: 10px;
+}
+
+.authForm > h1 {
+    width: 100%;
+    text-align: center;
+    background-color: #cac9c9;
+    border-radius: 10px 10px 0 0;
+    font-size: 29px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin: 0 0 15px;
+    padding: 5% 0;
+}
+
+.authForm input {
+    width: 20vw;
+    height: 30px;
+    margin: 15px;
+    padding: 0 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+#btnReg, #btnLog {
+    width: 13vw;
+    height: 30px;
+    background-color: #e9f3f3;
+    font-size: 17px;
+    border: 1px solid #989898;
+    border-radius: 10px;
+}
