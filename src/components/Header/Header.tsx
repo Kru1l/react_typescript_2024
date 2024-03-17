@@ -2,9 +2,9 @@ import {useEffect} from "react";
 import {NavLink} from "react-router-dom";
 
 import styles from './Header.module.css';
-import {useAppDispatch, useAppSelector} from "../../hooks";
 import {authService} from "../../services";
-import {authActions} from "../../store/slices";
+import {authActions} from "../../store";
+import {useAppDispatch, useAppSelector} from "../../hooks";
 
 const Header = () => {
     const {currentUser} = useAppSelector(state => state.auth);
@@ -16,7 +16,7 @@ const Header = () => {
         if (access && !currentUser) {
             dispatch(authActions.me());
         }
-    }, []);
+    }, [access, currentUser, dispatch]);
 
     return (
         <div className={styles.Header}>

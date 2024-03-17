@@ -3,8 +3,8 @@ import {SubmitHandler, useForm} from "react-hook-form";
 
 import styles from './CarForm.module.css';
 import {ICar} from "../../../interfaces";
+import {carActions} from "../../../store";
 import {useAppDispatch, useAppSelector} from "../../../hooks";
-import {carActions} from "../../../store/slices";
 
 const CarForm = () => {
     const {

@@ -1,7 +1,7 @@
 import {apiService} from "./apiService";
+import {urls} from "../constans";
 import {IAuth, ITokens, IUser} from "../interfaces";
 import {IRes} from "../types";
-import {urls} from "../constans";
 
 const accessTokenKey = 'access';
 const refreshTokenKey = 'refresh';

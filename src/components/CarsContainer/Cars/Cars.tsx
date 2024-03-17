@@ -2,8 +2,9 @@ import {useEffect} from "react";
 
 import {Car} from "../Car/Car";
 import styles from './Cars.module.css';
+import {carActions} from "../../../store";
 import {useAppDispatch, useAppSelector} from "../../../hooks";
-import {carActions} from "../../../store/slices";
+
 
 const Cars = () => {
     const {cars, trigger} = useAppSelector(state => state.cars);
@@ -11,8 +12,6 @@ const Cars = () => {
 
     useEffect(() => {
         dispatch(carActions.getAll());
-        // apiService.get(urls.cars.byId(3526)).then(({data}) => console.log(data))
-        //     .catch((e: AxiosError) => console.error(e.response.data));
     }, [trigger, dispatch]);
 
     return (

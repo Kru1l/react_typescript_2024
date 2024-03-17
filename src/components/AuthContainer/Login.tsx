@@ -3,8 +3,8 @@ import {SubmitHandler, useForm} from "react-hook-form";
 
 import styles from './Auth.module.css';
 import {IAuth} from "../../interfaces";
+import {authActions} from "../../store";
 import {useAppDispatch, useAppSelector} from "../../hooks";
-import {authActions} from "../../store/slices";
 
 const Login = () => {
     const {

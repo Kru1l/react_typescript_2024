@@ -2,8 +2,8 @@ import {FC} from 'react';
 
 import styles from './Car.module.css';
 import {ICar} from "../../../interfaces";
+import {carActions} from "../../../store";
 import {useAppDispatch} from "../../../hooks";
-import {carActions} from "../../../store/slices";
 
 interface IProps {
     car: ICar
