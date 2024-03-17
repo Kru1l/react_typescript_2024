@@ -1,8 +1,12 @@
+import {CarForm, Cars} from "../components";
+
+
 const CarsPage = () => {
 
     return (
         <div>
-            CarsPage
+            <CarForm/>
+            <Cars/>
         </div>
     );
 };

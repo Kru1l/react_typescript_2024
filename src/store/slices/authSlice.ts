@@ -40,17 +40,33 @@ const login = createAsyncThunk<IUser, { user: IAuth }>(
     }
 );
 
+const me = createAsyncThunk<IUser, void>(
+    'authSlice/me',
+    async (_, {rejectWithValue}) => {
+        try {
+            const {data} = await authService.me();
+            return data
+        } catch (e) {
+            const error = e as AxiosError;
+            return rejectWithValue(error.response.data);
+        }
+    }
+);
+
 const authSlice = createSlice({
     name: 'authSlice',
     initialState,
     reducers: {},
     extraReducers: builder =>
         builder
-            .addCase(register.rejected, state => {
-                state.registerError = 'Username already exist';
-            })
             .addCase(login.fulfilled, (state, action) => {
                 state.currentUser = action.payload;
+            })
+            .addCase(me.fulfilled, (state, action) => {
+                state.currentUser = action.payload;
+            })
+            .addCase(register.rejected, state => {
+                state.registerError = 'Username already exist';
             })
             .addCase(login.rejected, state => {
                 state.loginError = 'Username or password incorrect';
@@ -66,7 +82,8 @@ const {reducer: authReducer, actions} = authSlice;
 const authActions = {
     ...actions,
     register,
-    login
+    login,
+    me
 };
 
 export {

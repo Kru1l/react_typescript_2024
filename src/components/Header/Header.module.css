@@ -17,6 +17,14 @@
     transition: 1s;
 }
 
+.user > p {
+    margin: 2vw;
+    font-size: 25px;
+    font-weight: 700;
+    color: #DB9F3DFF;
+    transition: 0.5s;
+}
+
 .Header > a {
     text-decoration: none;
     margin: 2vw;
