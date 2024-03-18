@@ -22,15 +22,15 @@ apiService.interceptors.request.use(req => {
 apiService.interceptors.response.use(
     res => res,
     async (error: AxiosError) => {
-        const originalRequest = error.config;
+        const originalRequest = error.response.config;
 
         if (error.response.status === 401) {
             if (!isRefreshing) {
                 isRefreshing = true;
                 try {
                     await authService.refresh();
-                    runAfterRefresh();
                     isRefreshing = false;
+                    runAfterRefresh();
                     return apiService(originalRequest);
                 } catch {
                     authService.deleteTokens();
