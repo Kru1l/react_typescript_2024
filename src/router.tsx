@@ -1,14 +1,15 @@
 import {createBrowserRouter, Navigate} from "react-router-dom";
 
 import {MainLayout} from "./layouts";
-import {CarsPage, LoginPage, RegisterPage} from "./pages";
+import {AuthPage, CarsPage, LoginPage, PrivatePage, RegisterPage} from "./pages";
+import {AuthRequired} from "./hoc";
 
 
 const router = createBrowserRouter([
     {
         path: '', element: <MainLayout/>, children: [
             {
-                index: true, element: <Navigate to={'login'}/>
+                index: true, element: <Navigate to={'cars'}/>
             },
             {
                 path: 'register', element: <RegisterPage/>
@@ -17,8 +18,15 @@ const router = createBrowserRouter([
                 path: 'login', element: <LoginPage/>
             },
             {
-                path: 'cars', element: <CarsPage/>
-            }
+                element: <AuthRequired><AuthPage/></AuthRequired>, children: [
+                    {
+                        path: 'cars', element: <CarsPage/>
+                    },
+                    {
+                        path: 'private', element: <PrivatePage/>
+                    }
+                ]
+            },
         ]
     }
 ]);

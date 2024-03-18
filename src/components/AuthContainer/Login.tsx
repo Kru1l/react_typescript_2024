@@ -4,7 +4,7 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import styles from './Auth.module.css';
 import {IAuth} from "../../interfaces";
 import {authActions} from "../../store";
-import {useAppDispatch, useAppSelector} from "../../hooks";
+import {useAppDispatch, useAppLocation, useAppSelector} from "../../hooks";
 
 const Login = () => {
     const {
@@ -14,6 +14,7 @@ const Login = () => {
     } = useForm<IAuth>({mode: "onBlur"});
 
     const {loginError} = useAppSelector(state => state.auth);
+    const {state} = useAppLocation<{ pathname: string }>();
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
@@ -21,7 +22,7 @@ const Login = () => {
         const {meta: {requestStatus}} = await dispatch(authActions.login({user}));
 
         if (requestStatus === 'fulfilled') {
-            navigate('/cars');
+            navigate(state?.pathname || '/cars');
         }
     };
 

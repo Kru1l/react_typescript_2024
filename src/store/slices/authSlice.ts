@@ -56,7 +56,11 @@ const me = createAsyncThunk<IUser, void>(
 const authSlice = createSlice({
     name: 'authSlice',
     initialState,
-    reducers: {},
+    reducers: {
+        setCurrentUser: (state, action) => {
+            state.currentUser = action.payload;
+        }
+    },
     extraReducers: builder =>
         builder
             .addCase(login.fulfilled, (state, action) => {

@@ -1,5 +1,5 @@
 import {useEffect} from "react";
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 
 import styles from './Header.module.css';
 import {authService} from "../../services";
@@ -8,6 +8,7 @@ import {useAppDispatch, useAppSelector} from "../../hooks";
 
 const Header = () => {
     const {currentUser} = useAppSelector(state => state.auth);
+    const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
     const access = authService.getAccessToken();
@@ -18,12 +19,23 @@ const Header = () => {
         }
     }, [access, currentUser, dispatch]);
 
+    const logOut = (): void => {
+        authService.deleteTokens();
+        dispatch(authActions.setCurrentUser(null));
+        navigate('/login');
+    };
+
+
     return (
         <div className={styles.Header}>
             {currentUser
                 ?
                 <div className={styles.user}>
-                    <p>{currentUser.username}</p>
+                    <div>{currentUser.username}</div>
+                    <div id={styles.logOut}
+                         onClick={logOut}
+                    >Log Out
+                    </div>
                 </div>
                 :
                 <>

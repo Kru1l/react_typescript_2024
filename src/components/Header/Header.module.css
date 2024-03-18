@@ -17,12 +17,26 @@
     transition: 1s;
 }
 
-.user > p {
+.user {
+    display: flex;
+}
+
+.user > div {
     margin: 2vw;
     font-size: 25px;
     font-weight: 700;
     color: #DB9F3DFF;
     transition: 0.5s;
+}
+
+#logOut {
+    font-size: 22px;
+    color: #9b9b9b;
+}
+
+#logOut:hover {
+    cursor: pointer;
+    color: white;
 }
 
 .Header > a {
