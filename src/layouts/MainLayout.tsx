@@ -5,7 +5,7 @@ import {Header} from "../components";
 const MainLayout = () => {
 
     return (
-        <div style={{display: 'flex', justifyContent: 'center'}}>
+        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
             <Header/>
             <Outlet/>
         </div>
